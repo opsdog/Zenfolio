@@ -49,6 +49,7 @@ int main(int argc, char *argv[])
 
   char Header[MAXHEADERSIZE];
   char Content[MAXDATASIZE];
+  char MyPassword[30];
   int HeaderLength, ContentLength;
   char ContentLengthstr[5];
 
@@ -128,7 +129,11 @@ int main(int argc, char *argv[])
   printf("SSL_connect = %d %d\n",type, SSL_get_error(ZenSSL, type));
 #endif
 
+  printf("Enter your password:  ");
+  fscanf(stdin,"%s",MyPassword);
+
   strcpy(Content,"loginName=opsdog&password=");
+  strcat(Content,MyPassword);
   ContentLength = strlen(Content);
   sprintf(ContentLengthstr,"%d",ContentLength);
 #ifdef DEBUG
