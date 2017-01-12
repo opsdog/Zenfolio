@@ -128,8 +128,7 @@ int main(int argc, char *argv[])
   printf("SSL_connect = %d %d\n",type, SSL_get_error(ZenSSL, type));
 #endif
 
-  /*  strcpy(Content,"loginName=opsdog&password=ILikeSex\n");*/
-  strcpy(Content,"loginName=opsdog&password=ILikeSex");
+  strcpy(Content,"loginName=opsdog&password=");
   ContentLength = strlen(Content);
   sprintf(ContentLengthstr,"%d",ContentLength);
 #ifdef DEBUG
